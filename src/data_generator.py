@@ -2,10 +2,10 @@ import json
 import random
 from pathlib import Path
 
-# Dossier courant du script
+# Génération d'un fichier JSON contenant 100 valeurs aléatoires
+# Dossier du script 
 current_dir = Path(__file__).parent
 
-# Chemin du fichier de sortie (relatif au script)
 output_path = current_dir / "sample_100.json"
 
 records = []
@@ -26,4 +26,3 @@ for i in range(100):
 with open(output_path, "w", encoding="utf-8") as f:
     json.dump(records, f, indent=2)
 
-print(f"✅ Fichier généré : {output_path}")
