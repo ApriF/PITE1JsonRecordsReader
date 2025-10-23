@@ -5,7 +5,7 @@ from src import io
 
 
 def test_read_json_file(tmp_path):
-    """Teste la lecture d’un fichier JSON valide."""
+    """Test a valid JSON file"""
     data = [{"status": "ok", "value": 10}]
     test_file = tmp_path / "data.json"
     test_file.write_text(json.dumps(data), encoding="utf-8")
@@ -16,7 +16,7 @@ def test_read_json_file(tmp_path):
 
 
 def test_read_json_file_invalid(tmp_path):
-    """Teste la gestion d’un fichier illisible."""
+    """Test a bad file"""
     bad_file = tmp_path / "bad.json"
     bad_file.write_text("{invalid json", encoding="utf-8")
 
@@ -25,7 +25,7 @@ def test_read_json_file_invalid(tmp_path):
 
 
 def test_print_summary(capsys):
-    """Vérifie le format de la sortie console."""
+    """Checks the file format of the output"""
     stats = {"count": 3, "sum": 60, "avg": 20.0}
     io.print_summary(stats)
     captured = capsys.readouterr().out

@@ -6,7 +6,6 @@ from datetime import datetime
 from core import main
 
 
-# ---------- CONFIGURATION ---------- #
 
 def load_config(config_path: Path | None = None) -> dict:
     """Charge la configuration par défaut ou depuis un fichier JSON."""
@@ -25,7 +24,6 @@ def load_config(config_path: Path | None = None) -> dict:
     return default_config
 
 
-# ---------- FONCTIONS MÉTIER ---------- #
 
 def read_json_file(file_path: Path) -> list[dict]:
     """Lit un fichier JSON et renvoie les enregistrements."""
@@ -53,7 +51,6 @@ def main_io(data_path: Path, threshold: float):
     print_summary(stats)
 
 
-# ---------- CLI (interface ligne de commande) ---------- #
 
 def parse_args() -> argparse.Namespace:
     """Parse les arguments CLI."""

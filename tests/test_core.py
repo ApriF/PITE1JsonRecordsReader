@@ -4,7 +4,6 @@ from src.core import filtrer, compute_stats, main
 
 @pytest.fixture
 def sample_records():
-    """Jeu de données de test."""
     return [
         {"status": "ok", "value": 10},
         {"status": "OK", "value": "20"},
@@ -17,7 +16,6 @@ def sample_records():
 
 def test_filtrer_threshold(sample_records):
     res = filtrer(sample_records, threshold=10)
-    # On garde : 10, 20 (5 est <10, None/abc ignorés)
     assert len(res) == 2
     assert all(r["status"] == "ok" for r in res)
     assert {r["value"] for r in res} == {10.0, 20.0}
@@ -41,7 +39,6 @@ def test_compute_stats_empty():
 
 def test_main_integration(sample_records):
     stats = main(sample_records, 10)
-    # Après filtrage : valeurs 10 et 20 → sum=30, avg=15
     assert stats["count"] == 2
     assert stats["sum"] == 30
     assert stats["avg"] == pytest.approx(15.0)
