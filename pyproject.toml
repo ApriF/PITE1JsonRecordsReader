@@ -17,6 +17,8 @@ dependencies = [
 [project.scripts]
 acme-reporter = "acme_reporter.cli:app"
 
+
 [tool.pytest.ini_options]
-addopts = "-q"
+addopts = "-v"
+testpaths = ["tests"]
 pythonpath = ["src"]
