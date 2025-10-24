@@ -41,6 +41,7 @@ python -m venv .venv
 pip install -U pip pytest
 python -m pytest -v
 
+still, "pytest -v" does not work because the folder src is not found
 
 III/ RUN THE PROJECT MANUALLY
 
