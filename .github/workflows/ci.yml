@@ -36,7 +36,7 @@ jobs:
       - name: Install project (editable) and test deps
         # If you have requirements.txt use pip install -r requirements.txt
         run: |
-          pip install -r requirements.txt
+          python -m pip install pytest
           python -m pip install -e .
 
       - name: Run tests with pytest
